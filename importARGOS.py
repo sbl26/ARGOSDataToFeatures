@@ -45,5 +45,6 @@ while lineString:
     #get the next line
     lineString= inputFileObj.readline()
     
-   
+#close the file object
+inputFileObj.close()
         
