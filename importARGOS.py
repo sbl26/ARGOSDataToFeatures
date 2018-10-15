@@ -22,7 +22,6 @@ inputFileObj =  open(inputFile, 'r')
 
 #get the first line so we can loop
 lineString= inputFileObj.readline()
-print(lineString)
 while lineString:
     #set code to run only if the line contrains the string "Date: "
     if("Date :" in lineString):
@@ -32,7 +31,16 @@ while lineString:
 
         #get attributes from first line
         tagID= lineList[0]
-        break
+
+        #get the next line
+        line2String = inputFileObj.readline()
+        line2Data = line2String.split()
+        #print(line2Data)
+
+        #Get attributes from second line
+        obsLat = line2Data[2]
+        obsLon = line2Data[5]
+        print(tagID, obsLat, obsLon)
         
     #get the next line
     lineString= inputFileObj.readline()
